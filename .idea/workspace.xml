@@ -93,38 +93,53 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI.java</url>
-          <line>128</line>
+          <line>130</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI.java</url>
-          <line>129</line>
+          <line>131</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI.java</url>
-          <line>130</line>
+          <line>132</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI.java</url>
-          <line>131</line>
+          <line>133</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI.java</url>
-          <line>134</line>
+          <line>136</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI.java</url>
-          <line>136</line>
+          <line>138</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SortingMethods.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="59" />
+          <line>17</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SortingMethods.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Graphics.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -132,6 +147,7 @@
       <configuration name="Application">
         <watch expression="inputArrayInt" language="JAVA" />
         <watch expression="outputArrayInt" language="JAVA" />
+        <watch expression="data" language="JAVA" />
         <watch expression="data" language="JAVA" />
       </configuration>
     </watches-manager>

@@ -1,3 +1,5 @@
+import java.awt.*;
+
 class SortingMethods {
 
     int[] selectionSort(int[] inputArray) throws InterruptedException {
@@ -10,6 +12,12 @@ class SortingMethods {
                     min_idx = j;
 
                 }
+
+
+
+//                GUI.graphics.colorRow(1, Color.WHITE);
+//                Thread.sleep(100);
+
                 GUI.numberComparisons++;
             }
             // Swap the found minimum element with the first
@@ -19,6 +27,7 @@ class SortingMethods {
             inputArray[i] = temp;
             GUI.numberSwaps++;
         }
+
 
         return inputArray;
     }
@@ -68,8 +77,10 @@ class SortingMethods {
         } else {
             GUI.numberComparisons ++;
         }
-        GUI.graphics.colorRow(1);
-        GUI.numTable.updateUI();
+
+
+
+//        GUI.numTable.updateUI();
         return inputArray;
     }
 
