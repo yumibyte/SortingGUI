@@ -17,7 +17,7 @@ public class GUI implements ActionListener {
     public static JTable numTable;
     public static JScrollPane tableScrollPane;
     public static String[] columns;
-    public static Object[][] data;
+    public static JTextPane imageSortingArea;
     public static int numberSwaps;
     public static int numberComparisons;
     public static int[] outputArrayInt;
@@ -40,42 +40,10 @@ public class GUI implements ActionListener {
         frame.add(panel);
 
         // realtime listener for inputting nums
-        documentListener = new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-
-                String inputText = inputArrayField.getText();
-                inputArrayInt = Arrays.stream(inputText.split("\\r?\\n")).mapToInt(Integer::parseInt).toArray();
-                columns = new String[] {
-                        "# Item", "#"
-                };
-
-                data = new Object[inputArrayInt.length][2];
-                for (int i = 0; i < inputArrayInt.length; i++ ) {
-
-                    String dataToAppend = "<html><b>" + i + "</b> </html>";
-                    data[i][0] = dataToAppend;
-                    data[i][1] = inputArrayInt[i];
-                }
-
-                numTable = new JTable(data, columns);
-                tableScrollPane = new JScrollPane(numTable);
-                tableScrollPane.setBounds(10, 50, 110, 450);
-                panel.add(tableScrollPane);
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                // if user deletes num entered
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-
-            }
 
 
-        };
+
+
 
         inputArrayField = new JTextArea("");
         inputArrayField.setBounds(360, 50, 300, 180);
@@ -103,13 +71,23 @@ public class GUI implements ActionListener {
         sortButton.addActionListener((ActionListener) new GUI());
         sortButton.setBounds(450, 460, 150, 35);
 
+        imageSortingArea = new JTextPane();
+        imageSortingArea.setBounds(30, 50, 300, 450);
+        imageSortingArea.setContentType("text/html");
+        imageSortingArea.setEditable(false);
+        panel.add(imageSortingArea);
+
         panel.add(sortButton);
+
+        // create text area
+
+
         // create table
 
-        tableScrollPane = new JScrollPane(numTable);
-        tableScrollPane.setBounds(10, 50, 110, 450);
-        panel.add(tableScrollPane);
-
+//        tableScrollPane = new JScrollPane(numTable);
+//        tableScrollPane.setBounds(10, 50, 110, 450);
+//        panel.add(tableScrollPane);
+//
         frame.setVisible(true);
 
 //        ca = new CellArray(16, 23, 70, 15, 50);
@@ -121,6 +99,9 @@ public class GUI implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == sortButton) {
+
+            String inputText = GUI.inputArrayField.getText();
+            GUI.inputArrayInt = Arrays.stream(inputText.split("\\r?\\n")).mapToInt(Integer::parseInt).toArray();
 
             switch (algorithmComboBox.getSelectedIndex()) {
                 case 0:

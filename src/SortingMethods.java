@@ -1,9 +1,18 @@
 import java.awt.*;
+import java.util.Arrays;
 
 class SortingMethods {
 
+    public static String data = "";
     int[] selectionSort(int[] inputArray) throws InterruptedException {
         // One by one move boundary of unsorted subarray
+        // set textarea functionality
+        for (int i = 0; i < inputArray.length; i++ ) {
+
+            data = data + inputArray[i] + " ";
+        }
+        GUI.imageSortingArea.setText(data);
+
         for (int i = 0; i < inputArray.length - 1; i ++) {
             // Find the minimum element in unsorted array
             int min_idx = i;
@@ -12,11 +21,6 @@ class SortingMethods {
                     min_idx = j;
 
                 }
-
-
-
-//                GUI.graphics.colorRow(1, Color.WHITE);
-//                Thread.sleep(100);
 
                 GUI.numberComparisons++;
             }
