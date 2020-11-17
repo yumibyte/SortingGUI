@@ -68,7 +68,8 @@ class SortingMethods {
         } else {
             GUI.numberComparisons ++;
         }
-
+        GUI.graphics.colorRow(1);
+        GUI.numTable.updateUI();
         return inputArray;
     }
 

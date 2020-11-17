@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ff7491-3f5a-417a-ab97-261bf620e398" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Graphics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SortingMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/GUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/GUI$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/Graphics$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/Graphics$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/Graphics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/Graphics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/SortingMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/SortingMethods.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SortingMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortingMethods.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,6 +120,11 @@
           <url>file://$PROJECT_DIR$/src/GUI.java</url>
           <line>136</line>
           <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SortingMethods.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
