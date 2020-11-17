@@ -22,10 +22,12 @@ public class GUI implements ActionListener {
     public static int numberComparisons;
     public static int[] outputArrayInt;
     public static int[] inputArrayInt;
+    public static DocumentListener documentListener;
 //    public static CellArray ca;
 //    public static Graphics gg;
 //    public static Buffer buffer;
     public static SortingMethods sortingMethods = new SortingMethods();
+    public static Graphics graphics = new Graphics();
 
 
     public static void main(String[] args) {
@@ -38,7 +40,7 @@ public class GUI implements ActionListener {
         frame.add(panel);
 
         // realtime listener for inputting nums
-        DocumentListener documentListener = new DocumentListener() {
+        documentListener = new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
 
@@ -54,10 +56,7 @@ public class GUI implements ActionListener {
                     data[i][1] = inputArrayInt[i];
                 }
 
-//                numTable.setModel(tm);
-
                 numTable = new JTable(data, columns);
-
                 tableScrollPane = new JScrollPane(numTable);
                 tableScrollPane.setBounds(10, 50, 110, 450);
                 panel.add(tableScrollPane);
@@ -70,9 +69,10 @@ public class GUI implements ActionListener {
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                // fix array
 
             }
+
+
         };
 
         inputArrayField = new JTextArea("");

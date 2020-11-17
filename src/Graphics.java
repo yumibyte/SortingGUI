@@ -17,6 +17,11 @@ public class Graphics {
 //        }
 //    }
 
+//    colorRow2(int rowNumber) {
+//        GUI.documentListener.insertUpdate();
+//
+//    }
+
     private void drawImage(Buffer buffer, int i, int i1, Graphics graphics) {
     }
 
