@@ -35,7 +35,7 @@ public class GUI implements ActionListener {
         JFrame frame = new JFrame("GUI Sorter!!!");
         panel = new JPanel();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 700);
+        frame.setSize(700, 700);
         panel.setLayout(null);
         frame.add(panel);
 
@@ -52,7 +52,9 @@ public class GUI implements ActionListener {
 
                 data = new Object[inputArrayInt.length][2];
                 for (int i = 0; i < inputArrayInt.length; i++ ) {
-                    data[i][0] = i;
+
+                    String dataToAppend = "<html><b>" + i + "</b> </html>";
+                    data[i][0] = dataToAppend;
                     data[i][1] = inputArrayInt[i];
                 }
 
@@ -76,30 +78,30 @@ public class GUI implements ActionListener {
         };
 
         inputArrayField = new JTextArea("");
-        inputArrayField.setBounds(150, 50, 300, 180);
+        inputArrayField.setBounds(360, 50, 300, 180);
         inputArrayField.getDocument().addDocumentListener(documentListener);
         panel.add(inputArrayField);
 
         JLabel algorithmsLabel = new JLabel("Choose an algorithm");
-        algorithmsLabel.setBounds(150, 230, 300, 50);
+        algorithmsLabel.setBounds(360, 230, 300, 50);
         panel.add(algorithmsLabel);
 
         algorithmComboBox = new JComboBox(algorithmsList);
-        algorithmComboBox.setBounds(140, 260, 300, 50);
+        algorithmComboBox.setBounds(360, 260, 300, 50);
         algorithmComboBox.addActionListener(new GUI());
         panel.add(algorithmComboBox);
 
         JLabel comparisonsLabel = new JLabel("Output information");
-        comparisonsLabel.setBounds(150, 280, 300, 100);
+        comparisonsLabel.setBounds(360, 280, 300, 100);
         panel.add(comparisonsLabel);
 
         outputResultsLabel = new JTextArea("This sort used _" + "\n sdfsdf");
-        outputResultsLabel.setBounds(150, 350, 300, 90);
+        outputResultsLabel.setBounds(360, 350, 300, 90);
         panel.add(outputResultsLabel);
 
         sortButton = new JButton("Sort");
         sortButton.addActionListener((ActionListener) new GUI());
-        sortButton.setBounds(220, 460, 150, 35);
+        sortButton.setBounds(450, 460, 150, 35);
 
         panel.add(sortButton);
         // create table

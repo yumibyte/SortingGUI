@@ -25,15 +25,17 @@ public class Graphics {
     private void drawImage(Buffer buffer, int i, int i1, Graphics graphics) {
     }
 
-    public void colorRow(int rowNumber) {
+    public void colorRow(int rowNumber, Color inputColor) {
         // MARK : highlight row functionality
         GUI.numTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
             {
                 final Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-                c.setBackground(row == rowNumber ? Color.LIGHT_GRAY : Color.WHITE);
+                c.setBackground(row == rowNumber ? inputColor: Color.WHITE);
+                GUI.numTable.updateUI();
                 return c;
+
             }
         });
     }
