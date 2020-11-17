@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.event.DocumentEvent;
@@ -15,18 +16,6 @@ import javax.swing.table.TableModel;
 public class GUI implements ActionListener {
 
 
-
-//    public void refreshTable() {
-////        numTable = JTable(data, columns);
-//        colorRow(1);
-//        numTable.setModel(numTable);
-//
-////        tableScrollPane = new JScrollPane(numTable);
-////        tableScrollPane.setBounds(10, 50, 110, 450);
-////        panel.add(tableScrollPane);
-////        tableScrollPane.add(numTable);
-//    }
-
     public void colorRow(int rowNumber) {
         // MARK : highlight row functionality
         numTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
@@ -39,6 +28,7 @@ public class GUI implements ActionListener {
             }
         });
     }
+
     int[] selectionSort(int[] inputArray) throws InterruptedException {
         // One by one move boundary of unsorted subarray
         for (int i = 0; i < inputArray.length - 1; i ++) {
@@ -88,7 +78,6 @@ public class GUI implements ActionListener {
         numberSwaps++;
         return i + 1;
     }
-
     /* The main function that implements QuickSort()
       arr[] --> Array to be sorted,
       low  --> Starting index,
@@ -167,8 +156,24 @@ public class GUI implements ActionListener {
     public static int numberComparisons;
     public static int[] outputArrayInt;
     public static int[] inputArrayInt;
+    public static CellArray ca;
+    public static Graphics gg;
+    public static Buffer buffer;
 
+    public void update(Graphics var1) {
+        this.paint(var1);
+    }
+
+    public void paint(Graphics var1) {
+        if (this.gg != null && var1 != null) {
+            this.gg.setColor(this.bg);
+            this.gg.fillRect(0, 0, this.getSize().width, this.getSize().height);
+            this.ca.paint(this.gg);
+            var1.drawImage(this.buffer, 0, 0, this);
+        }
+    }
     public static void main(String[] args) {
+
 
         JFrame frame = new JFrame("GUI Sorter!!!");
         panel = new JPanel();
@@ -242,53 +247,7 @@ public class GUI implements ActionListener {
         sortButton.setBounds(220, 460, 150, 35);
 
         panel.add(sortButton);
-// create table
-        numTable = new JTable(new TableModel() {
-            @Override
-            public int getRowCount() {
-                return 0;
-            }
-
-            @Override
-            public int getColumnCount() {
-                return 0;
-            }
-
-            @Override
-            public String getColumnName(int columnIndex) {
-                return null;
-            }
-
-            @Override
-            public Class<?> getColumnClass(int columnIndex) {
-                return null;
-            }
-
-            @Override
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return false;
-            }
-
-            @Override
-            public Object getValueAt(int rowIndex, int columnIndex) {
-                return null;
-            }
-
-            @Override
-            public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-
-            }
-
-            @Override
-            public void addTableModelListener(TableModelListener l) {
-
-            }
-
-            @Override
-            public void removeTableModelListener(TableModelListener l) {
-
-            }
-        });
+        // create table
 
         tableScrollPane = new JScrollPane(numTable);
         tableScrollPane.setBounds(10, 50, 110, 450);
@@ -296,7 +255,12 @@ public class GUI implements ActionListener {
 
         frame.setVisible(true);
 
+        ca = new CellArray(16, 23, 70, 15, 50);
+        gui.buffer = gui.createImage(gui.getSize().width, gui.getSize().height);
+        this.gg = this.buffer.getGraphics();
+
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -306,6 +270,7 @@ public class GUI implements ActionListener {
                 case 0:
                     numberSwaps = 0;
                     numberComparisons = 0;
+
                     try {
                         outputArrayInt = gui.selectionSort(inputArrayInt);
                     } catch (InterruptedException ex) {
@@ -340,14 +305,14 @@ public class GUI implements ActionListener {
     }
 }
 
-class ModifyTable implements TableModelListener {
-
-    public ModifyTable(JTable numTable) {
-        numTable.getModel().addTableModelListener(this);
-    }
-
-    @Override
-    public void tableChanged(TableModelEvent e) {
-
-    }
-}
+//class ModifyTable implements TableModelListener {
+//
+//    public ModifyTable(JTable numTable) {
+//        numTable.getModel().addTableModelListener(this);
+//    }
+//
+//    @Override
+//    public void tableChanged(TableModelEvent e) {
+//
+//    }
+//}
