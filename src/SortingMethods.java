@@ -4,7 +4,7 @@ import java.util.Arrays;
 class SortingMethods {
 
     public static Graphics graphics = new Graphics();
-    int[] selectionSort(int[] inputArray) throws InterruptedException {
+    int[] selectionSort(int[] inputArray) {
         // set textarea functionality
         graphics.clearTextArea();
 
@@ -31,12 +31,13 @@ class SortingMethods {
 
             GUI.numberSwaps++;
         }
-        GUI.imagingLabel.setText("<html>" + graphics.data);
-        graphics.data = "";
+
         return inputArray;
     }
 
     int partition(int inputArray[], int low, int high) {
+        graphics.setTextArea(inputArray, -1, -1);
+
         int pivot = inputArray[high];
         int i = (low - 1); // index of smaller element
         for (int j = low; j < high; j ++) {
@@ -49,14 +50,21 @@ class SortingMethods {
                 inputArray[i] = inputArray[j];
                 inputArray[j] = temp;
                 GUI.numberSwaps++;
+
+            } else {
+                GUI.numberComparisons ++;
+
             }
-            GUI.numberComparisons ++;
         }
-        // swap arr[i+1] and arr[high] (or pivot)
+// swap arr[i+1] and arr[high] (or pivot)
+        graphics.setTextArea(inputArray, -1, -1);
+
         int temp = inputArray[i + 1];
+        graphics.setTextArea(inputArray, i + 1, high);
         inputArray[i + 1] = inputArray[high];
         inputArray[high] = temp;
         GUI.numberSwaps++;
+        graphics.setTextArea(inputArray, -1, -1);
 
         return i + 1;
     }
@@ -83,8 +91,6 @@ class SortingMethods {
         }
 
 
-
-//        GUI.numTable.updateUI();
         return inputArray;
     }
 
@@ -113,8 +119,8 @@ class SortingMethods {
             inputArray[j + 1] = key;
 
         }
-        GUI.imagingLabel.setText("<html>" + graphics.data);
-        graphics.data = "";
+        graphics.setTextArea(inputArray, -1, -1);         // unsure how to access the value swapped with... so set to same value for now
+
         return inputArray;
     }
 
@@ -136,8 +142,7 @@ class SortingMethods {
                 GUI.numberComparisons++;
             }
         }
-        GUI.imagingLabel.setText("<html>" + graphics.data);
-        graphics.data = "";
+
         return inputArray;
     }
 }

@@ -22,7 +22,7 @@ public class GUI implements ActionListener {
     public static DocumentListener documentListener;
     public static JLabel imagingLabel;
     public static SortingMethods sortingMethods = new SortingMethods();
-
+    public static Graphics graphics = new Graphics();
 
     public static void main(String[] args) {
 
@@ -83,26 +83,32 @@ public class GUI implements ActionListener {
                     numberSwaps = 0;
                     numberComparisons = 0;
 
-                    try {
-                        outputArrayInt = sortingMethods.selectionSort(inputArrayInt);
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
+
+                    outputArrayInt = sortingMethods.selectionSort(inputArrayInt);
+                    imagingLabel.setText("<html>" + graphics.data);
+                    graphics.data = "";
+
                     break;
                 case 1:
                     numberSwaps = 0;
                     numberComparisons = 0;
                     outputArrayInt = sortingMethods.insertionSort(inputArrayInt);
+                    imagingLabel.setText("<html>" + graphics.data);
+                    graphics.data = "";
                     break;
                 case 2:
                     numberSwaps = 0;
                     numberComparisons = 0;
                     outputArrayInt = sortingMethods.quickSort(inputArrayInt, 0, inputArrayInt.length - 1);
+                    imagingLabel.setText("<html>" + graphics.data + "<br/> pivot is: " + inputArrayInt[inputArrayInt.length - 1]);
+                    graphics.data = "";
                     break;
                 case 3:
                     numberSwaps = 0;
                     numberComparisons = 0;
                     outputArrayInt = sortingMethods.bubbleSort(inputArrayInt);
+                    imagingLabel.setText("<html>" + graphics.data);
+                    graphics.data = "";
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + algorithmComboBox.getSelectedIndex());
