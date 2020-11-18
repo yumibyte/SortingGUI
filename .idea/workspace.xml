@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ff7491-3f5a-417a-ab97-261bf620e398" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/SortingMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/SortingMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortingMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortingMethods.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,13 +89,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SortingMethods.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="89" />
+          <line>40</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SortingMethods.java</url>
-          <line>99</line>
-          <option name="timeStamp" value="90" />
+          <line>48</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SortingMethods.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="96" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
