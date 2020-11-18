@@ -124,14 +124,20 @@ class SortingMethods {
             for (int j = 0; j < arrayLength - i - 1; j++) {
                 if (inputArray[j] > inputArray[j + 1]) {
                     // swap arr[j+1] and arr[j]
+                    graphics.setTextArea(inputArray, j, j + 1);
                     int temp = inputArray[j];
                     inputArray[j] = inputArray[j + 1];
                     inputArray[j + 1] = temp;
                     GUI.numberSwaps ++;
+
+                } else {
+                    graphics.setTextArea(inputArray, -1, -1);
                 }
                 GUI.numberComparisons++;
             }
         }
+        GUI.imagingLabel.setText("<html>" + graphics.data);
+        graphics.data = "";
         return inputArray;
     }
 }
