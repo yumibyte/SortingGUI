@@ -1,42 +1,36 @@
-import javax.swing.*;
-import javax.swing.table.DefaultTableCellRenderer;
-import java.awt.*;
-import java.nio.Buffer;
+
 
 public class Graphics {
-//    public void update(Graphics var1) {
-//        this.paint(var1);
-//    }
+    public static String data = "";
 
-//    public void paint(Graphics var1) {
-//        if (GUI.gg != null && var1 != null) {
-//            GUI.gg.setColor(GUI.bg);
-//            GUI.gg.fillRect(0, 0, GUI.getSize().width, GUI.getSize().height);
-//            GUI.ca.paint(GUI.gg);
-//            var1.drawImage(GUI.buffer, 0, 0, this);
-//        }
-//    }
+    public void setTextArea(int[] inputArray, int swapIndex1, int swapIndex2) {
 
-//    colorRow2(int rowNumber) {
-//        GUI.documentListener.insertUpdate();
-//
-//    }
+        // NO SWAP
+        if (swapIndex1 == -1 && swapIndex2 == -1) {
+            for (int i = 0; i < inputArray.length; i++ ) {
 
-    private void drawImage(Buffer buffer, int i, int i1, Graphics graphics) {
-    }
-
-    public void colorRow(int rowNumber, Color inputColor) {
-        // MARK : highlight row functionality
-        GUI.numTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
-            @Override
-            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
-            {
-                final Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-                c.setBackground(row == rowNumber ? inputColor: Color.WHITE);
-                GUI.numTable.updateUI();
-                return c;
-
+                data = data + inputArray[i] + " ";
             }
-        });
+            data = data + "<br/>";
+
+        } else {
+            for (int i = 0; i < inputArray.length; i++ ) {
+
+                // if it's a swapped number make it bold
+                if (i == swapIndex1 || i == swapIndex2) {
+                    data = data + "<b>" + inputArray[i] + "</b> ";
+                } else {
+                    data = data + inputArray[i] + " ";
+
+                }
+            }
+            data = data + "<br/>";
+        }
+
     }
+
+    public void clearTextArea() {
+        GUI.imagingLabel.setText("");
+    }
+
 }

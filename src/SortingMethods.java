@@ -3,22 +3,19 @@ import java.util.Arrays;
 
 class SortingMethods {
 
-    public static String data = "";
+    public static Graphics graphics = new Graphics();
     int[] selectionSort(int[] inputArray) throws InterruptedException {
-        // One by one move boundary of unsorted subarray
         // set textarea functionality
-        for (int i = 0; i < inputArray.length; i++ ) {
+        graphics.clearTextArea();
 
-            data = data + inputArray[i] + " ";
-        }
-        GUI.imageSortingArea.setText(data);
-
+        // One by one move boundary of unsorted subarray
         for (int i = 0; i < inputArray.length - 1; i ++) {
             // Find the minimum element in unsorted array
             int min_idx = i;
             for (int j = i + 1; j < inputArray.length; j++) {
                 if (inputArray[j] < inputArray[min_idx]) {
                     min_idx = j;
+                    graphics.setTextArea(inputArray, i, min_idx);
 
                 }
 
@@ -26,13 +23,16 @@ class SortingMethods {
             }
             // Swap the found minimum element with the first
             // element
+
             int temp = inputArray[min_idx];
             inputArray[min_idx] = inputArray[i];
             inputArray[i] = temp;
+            graphics.setTextArea(inputArray, -1, -1);
+
             GUI.numberSwaps++;
         }
-
-
+        GUI.imagingLabel.setText("<html>" + graphics.data);
+        graphics.data = "";
         return inputArray;
     }
 
@@ -52,12 +52,12 @@ class SortingMethods {
             }
             GUI.numberComparisons ++;
         }
-
         // swap arr[i+1] and arr[high] (or pivot)
         int temp = inputArray[i + 1];
         inputArray[i + 1] = inputArray[high];
         inputArray[high] = temp;
         GUI.numberSwaps++;
+
         return i + 1;
     }
     /* The main function that implements QuickSort()
@@ -97,15 +97,24 @@ class SortingMethods {
             /* Move elements of arr[0..i-1], that are
                greater than key, to one position ahead
                of their current position */
+            graphics.setTextArea(inputArray, -1, -1);
+
             while (j >= 0 && inputArray[j] > key) {
-                GUI.numberComparisons++;
+                graphics.setTextArea(inputArray, j + 1, j + 1);         // unsure how to access the value swapped with... so set to same value for now
+
                 inputArray[j + 1] = inputArray[j];
                 j = j - 1;
+                GUI.numberComparisons++;
                 GUI.numberSwaps++;
             }
+
             GUI.numberComparisons++;
+
             inputArray[j + 1] = key;
+
         }
+        GUI.imagingLabel.setText("<html>" + graphics.data);
+        graphics.data = "";
         return inputArray;
     }
 

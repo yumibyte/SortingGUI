@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="23ff7491-3f5a-417a-ab97-261bf620e398" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/GUI$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/Graphics$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/Graphics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/Graphics.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SortingGUI/SortingMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SortingGUI/SortingMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CellArray.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Highight.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortingMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortingMethods.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,24 +93,23 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Graphics.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="64" />
+          <url>file://$PROJECT_DIR$/src/SortingMethods.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SortingMethods.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="72" />
+          <line>100</line>
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="inputArrayInt" language="JAVA" />
-        <watch expression="outputArrayInt" language="JAVA" />
         <watch expression="data" language="JAVA" />
-        <watch expression="data" language="JAVA" />
-        <watch expression="imageSortingArea.getText()" language="JAVA" />
+        <watch expression="inputArray" language="JAVA" />
+        <watch expression="i" language="JAVA" />
+        <watch expression="j" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

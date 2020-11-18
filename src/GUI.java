@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.Buffer;
@@ -14,20 +15,13 @@ public class GUI implements ActionListener {
     public static String[] algorithmsList = {"Selection Sort", "Insertion Sort", "QuickSort", "Bubble Sort"};
     public static JTextArea outputResultsLabel;
     public static JButton sortButton;
-    public static JTable numTable;
-    public static JScrollPane tableScrollPane;
-    public static String[] columns;
-    public static JTextPane imageSortingArea;
     public static int numberSwaps;
     public static int numberComparisons;
     public static int[] outputArrayInt;
     public static int[] inputArrayInt;
     public static DocumentListener documentListener;
-//    public static CellArray ca;
-//    public static Graphics gg;
-//    public static Buffer buffer;
+    public static JLabel imagingLabel;
     public static SortingMethods sortingMethods = new SortingMethods();
-    public static Graphics graphics = new Graphics();
 
 
     public static void main(String[] args) {
@@ -35,65 +29,46 @@ public class GUI implements ActionListener {
         JFrame frame = new JFrame("GUI Sorter!!!");
         panel = new JPanel();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(700, 700);
+        frame.setSize(550, 700);
         panel.setLayout(null);
         frame.add(panel);
 
+
         // realtime listener for inputting nums
-
-
-
-
-
         inputArrayField = new JTextArea("");
-        inputArrayField.setBounds(360, 50, 300, 180);
+        inputArrayField.setBounds(230, 50, 300, 180);
         inputArrayField.getDocument().addDocumentListener(documentListener);
         panel.add(inputArrayField);
 
         JLabel algorithmsLabel = new JLabel("Choose an algorithm");
-        algorithmsLabel.setBounds(360, 230, 300, 50);
+        algorithmsLabel.setBounds(230, 230, 300, 50);
         panel.add(algorithmsLabel);
 
         algorithmComboBox = new JComboBox(algorithmsList);
-        algorithmComboBox.setBounds(360, 260, 300, 50);
+        algorithmComboBox.setBounds(230, 260, 300, 50);
         algorithmComboBox.addActionListener(new GUI());
         panel.add(algorithmComboBox);
 
         JLabel comparisonsLabel = new JLabel("Output information");
-        comparisonsLabel.setBounds(360, 280, 300, 100);
+        comparisonsLabel.setBounds(230, 280, 300, 100);
         panel.add(comparisonsLabel);
 
-        outputResultsLabel = new JTextArea("This sort used _" + "\n sdfsdf");
-        outputResultsLabel.setBounds(360, 350, 300, 90);
+        outputResultsLabel = new JTextArea("");
+        outputResultsLabel.setBounds(230, 350, 300, 90);
         panel.add(outputResultsLabel);
 
         sortButton = new JButton("Sort");
         sortButton.addActionListener((ActionListener) new GUI());
-        sortButton.setBounds(450, 460, 150, 35);
+        sortButton.setBounds(320, 460, 150, 35);
 
-        imageSortingArea = new JTextPane();
-        imageSortingArea.setBounds(30, 50, 300, 450);
-        imageSortingArea.setContentType("text/html");
-        imageSortingArea.setEditable(false);
-        panel.add(imageSortingArea);
+        imagingLabel = new JLabel("<html>Visualization of sorting<br/>will be displayed here...<br/><b>Bold<b/> = # to be swapped");
+        imagingLabel.setFont(new Font("Sans Serif", Font.PLAIN, 15));
+        imagingLabel.setBounds(10, 0, 500, 450);
+        panel.add(imagingLabel);
 
         panel.add(sortButton);
 
-        // create text area
-
-
-        // create table
-
-//        tableScrollPane = new JScrollPane(numTable);
-//        tableScrollPane.setBounds(10, 50, 110, 450);
-//        panel.add(tableScrollPane);
-//
         frame.setVisible(true);
-
-//        ca = new CellArray(16, 23, 70, 15, 50);
-//        gui.buffer = gui.createImage(gui.getSize().width, gui.getSize().height);
-//        this.gg = this.buffer.getGraphics();
-
     }
 
     @Override
@@ -141,15 +116,3 @@ public class GUI implements ActionListener {
         }
     }
 }
-
-//class ModifyTable implements TableModelListener {
-//
-//    public ModifyTable(JTable numTable) {
-//        numTable.getModel().addTableModelListener(this);
-//    }
-//
-//    @Override
-//    public void tableChanged(TableModelEvent e) {
-//
-//    }
-//}
